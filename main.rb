@@ -1,6 +1,12 @@
 # List of enumerables
 module Enumerable
-  # Your code goes here
+  def my_each_with_index
+    index = 0
+    my_each do |item|
+      yield [item, index]
+      index += 1
+    end
+  end
 end
 
 # First exercise
@@ -8,8 +14,7 @@ class Array
   def my_each
     i = 0
     while i < length
-      yield [keys[i], values[i]] if is_a?(Hash)
-      yield self[i] unless is_a?(Hash)
+      p yield (self[i])
       i += 1
     end
     self
