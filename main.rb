@@ -7,6 +7,14 @@ module Enumerable
       index += 1
     end
   end
+
+  def my_select
+    selected = []
+    my_each do |item|
+      selected.push(item) if yield(item)
+    end
+    selected
+  end
 end
 
 # First exercise
