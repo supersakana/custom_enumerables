@@ -25,6 +25,11 @@ module Enumerable
     any = my_select(&block)
     any.length.positive?
   end
+
+  def my_none?(&block)
+    none = my_select(&block)
+    none.length.zero?
+  end
 end
 
 # First exercise
