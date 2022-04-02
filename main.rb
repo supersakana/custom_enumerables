@@ -15,6 +15,11 @@ module Enumerable
     end
     selected
   end
+
+  def my_all?(&block)
+    all = my_select(&block)
+    all == self
+  end
 end
 
 # First exercise
