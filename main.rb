@@ -30,6 +30,18 @@ module Enumerable
     none = my_select(&block)
     none.length.zero?
   end
+
+  def my_count
+    count = 0
+    my_each do |item|
+      if block_given?
+        count += 1 if yield(item)
+      else
+        count += 1
+      end
+    end
+    count
+  end
 end
 
 # First exercise
