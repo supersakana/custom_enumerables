@@ -20,6 +20,11 @@ module Enumerable
     all = my_select(&block)
     all == self
   end
+
+  def my_any?(&block)
+    any = my_select(&block)
+    any.length.positive?
+  end
 end
 
 # First exercise
